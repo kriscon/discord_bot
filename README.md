@@ -2,4 +2,4 @@
 A simple discord bot.
 
 # Use with config file, or parameterinput
-e.g. bot.py --config='example_config.json' --debuglevel='INFO'
+e.g. ./discord_bot/run.py --config='example_config.json' --debuglevel='INFO'

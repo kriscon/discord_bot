@@ -1,0 +1,8 @@
+{
+    "debuglevel": "INFO",
+    "logfile": "discord_bot.log",
+    "bot": {
+        "channels": ["test-channel"],
+        "token": "MY TOKEN HERE"
+    }
+}
