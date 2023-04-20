@@ -1,8 +1,10 @@
 {
-    "debuglevel": "INFO",
-    "logfile": "discord_bot.log",
+    "app": {
+        "debuglevel": "WARNING",
+        "logfile": "discord_bot.log"
+    },
     "bot": {
         "channels": ["test-channel"],
-        "token": "MY TOKEN HERE"
+        "token": "<your token here>"
     }
 }
