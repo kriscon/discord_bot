@@ -6,7 +6,7 @@ from core import with_logging
 async def send_message(message):
     await message.channel.send('Hello!')
 
-
+@with_logging
 def run_bot(token):
     intents = discord.Intents.default()
     intents.message_content = True
@@ -28,4 +28,5 @@ def run_bot(token):
 
         if user_message == '!hello':
             await send_message(message)
+
     client.run(token)

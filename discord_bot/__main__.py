@@ -23,6 +23,7 @@ parser.add_argument('-l', '--logfile',
 
 arguments = parser.parse_args()
 
+# TODO convert to function
 # Build config variables form config file
 try:
     with open(arguments.config, encoding='utf-8') as config_file:
