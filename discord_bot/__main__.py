@@ -45,8 +45,9 @@ if arguments.debuglevel:
     config.app.debuglevel = arguments.debuglevel
 
 # Configure logging
+log_format = '%(asctime)s:%(module)s:%(levelname)s:%(lineno)d:%(message)s'
 logging.basicConfig(filename=config.app.logfile, encoding='utf-8', level=config.app.debuglevel,
-                    format='%(asctime)s:%(levelname)s:%(lineno)d:%(message)s',
+                    format=log_format,
                     datefmt='%Y-%m-%dT%H:%M:%S%z')
 
 for setting in config.items():
