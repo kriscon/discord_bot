@@ -1,8 +1,11 @@
 import logging
 import discord
+from core import with_logging
 
+@with_logging
 async def send_message(message):
     await message.channel.send('Hello!')
+
 
 def run_bot(token):
     intents = discord.Intents.default()

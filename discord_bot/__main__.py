@@ -1,8 +1,8 @@
 import argparse
 import logging
 import json
-import bot
 from core import dotdict
+import bot
 
 # Set up arguments
 parser = argparse.ArgumentParser(
@@ -21,11 +21,11 @@ parser.add_argument('-d', '--debuglevel',
 parser.add_argument('-l', '--logfile',
                     help='Override log path set in the config file')
 
-args = parser.parse_args()
+arguments = parser.parse_args()
 
 # Build config variables form config file
 try:
-    with open(args.config, encoding='utf-8') as config_file:
+    with open(arguments.config, encoding='utf-8') as config_file:
         # config.bot.channels, config.bot.token, config.debuglevel, config.logfile
         json_data = dotdict(json.load(config_file))
         config = dotdict()
@@ -39,10 +39,10 @@ except FileNotFoundError as err:
     logging.error(err)
 
 # Override logfile and debuglevel if specified as argument
-if args.logfile:
-    config.app.logfile = args.logfile
-if args.debuglevel:
-    config.app.debuglevel = args.debuglevel
+if arguments.logfile:
+    config.app.logfile = arguments.logfile
+if arguments.debuglevel:
+    config.app.debuglevel = arguments.debuglevel
 
 # Configure logging
 logging.basicConfig(filename=config.app.logfile, encoding='utf-8', level=config.app.debuglevel,
