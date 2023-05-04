@@ -27,7 +27,7 @@ arguments = parser.parse_args()
 # Build config variables form config file
 try:
     with open(arguments.config, encoding='utf-8') as config_file:
-        # config.bot.channels, config.bot.token, config.debuglevel, config.logfile
+        # config.bot.channels, config.bot.token, config.app.debuglevel, config.app.logfile
         json_data = dotdict(json.load(config_file))
         config = dotdict()
         for item in json_data.items():
